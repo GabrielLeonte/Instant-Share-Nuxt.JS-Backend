@@ -15,7 +15,7 @@ exports.dbTables = [
       'name' : 'coins',
       'cols' : [
           ['coin_id', 'INT UNIQUE PRIMARY KEY'],
-          ['name', 'TEXT UNIQUE'],
+          ['name', 'TEXT'],
           ['ticker', 'TEXT'],
           ['rpc_host', 'TEXT'],
           ['rpc_user', 'TEXT'],
@@ -27,12 +27,12 @@ exports.dbTables = [
    {
       'name' : 'user_balance',
       'cols' : [
-          ['coin', 'TEXT UNIQUE PRIMARY KEY'],
-          ['icon', 'TEXT'],
-          ['ticker', 'TEXT'],
-          ['balance', 'TEXT'],
-          ['total_deposit', 'TEXT'],
-          ['total_withdraw', 'TEXT']
+          ['user_id', 'TEXT'],
+          ['name', 'TEXT'],
+          ['balance', 'TEXT DEFAULT 0'],
+          ['deposit_address', 'TEXT NULL'],
+          ['total_deposit', 'TEXT DEFAULT 0'],
+          ['total_withdraw', 'TEXT DEFAULT 0']
         ]
    }
 ];
